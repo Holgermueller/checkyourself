@@ -1,15 +1,31 @@
 <template>
-  <v-container>
+  <v-container class="main-container">
     <v-row class="text-center">
-      <h1>this is the home page</h1>
+      <v-col>
+        <SubmitForm />
+      </v-col>
+      <v-col>
+        <ScoresDisplay />
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import SubmitForm from "./indexComponents/SubmitForm.vue";
+import ScoresDisplay from "./indexComponents/ScoresDisplay.vue";
+
 export default {
   name: "HomePage",
-
-  data: () => ({}),
+  components: {
+    SubmitForm,
+    ScoresDisplay,
+  },
 };
 </script>
+
+<style scoped>
+.main-container {
+  margin-top: 5%;
+}
+</style>
