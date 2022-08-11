@@ -1,0 +1,32 @@
+{
+  "name": "checkyourself",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Holgermueller/checkyourself.git"
+  },
+  "author": "Holger Mueller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Holgermueller/checkyourself/issues"
+  },
+  "homepage": "https://github.com/Holgermueller/checkyourself#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
