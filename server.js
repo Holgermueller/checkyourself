@@ -5,8 +5,6 @@ const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-//for test push
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
