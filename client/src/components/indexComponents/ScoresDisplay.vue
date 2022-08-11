@@ -3,7 +3,7 @@
     <v-card-title>
       <h2>output</h2>
     </v-card-title>
-    <v-card-text> scores appear here </v-card-text>
+    <v-card-text> {{ scores }} </v-card-text>
   </v-card>
 </template>
 
@@ -11,6 +11,12 @@
 export default {
   name: "ScoresDisplay",
   data: () => ({}),
+
+  computed: {
+    scores() {
+      return this.$store.getters.scores;
+    },
+  },
 };
 </script>
 

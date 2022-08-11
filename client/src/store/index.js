@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import Perspective from "./perspective";
+import Perspective from "./Perspective";
 import Shared from "./shared";
 
 Vue.use(Vuex);

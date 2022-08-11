@@ -41,7 +41,9 @@ export default {
     },
 
     submitForm() {
-      console.log(this.message);
+      this.$store.dispatch("getScores", {
+        message: this.message,
+      });
     },
   },
 };
