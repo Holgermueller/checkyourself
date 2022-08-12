@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 export default {
   state: {
     scores: null,
@@ -11,9 +13,18 @@ export default {
 
   actions: {
     getScores({ commit }, payload) {
-      let scores = payload.message;
+      let messageToCheck = payload.message;
 
-      commit("SET_SCORES", scores);
+      axios
+        .post("/", {
+          messageToCheck: messageToCheck,
+        })
+        .then((res) => {
+          console.log(res);
+          const scores = res;
+
+          commit("SET_SCORES", scores);
+        });
     },
   },
 
