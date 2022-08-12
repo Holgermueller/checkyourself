@@ -20,7 +20,7 @@ export default {
           messageToCheck: messageToCheck,
         })
         .then((res) => {
-          console.log(res);
+          console.log("the res: " + res);
           const scores = res;
 
           commit("SET_SCORES", scores);

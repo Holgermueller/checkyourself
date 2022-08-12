@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0">
     <v-card-title>
-      <h2>output</h2>
+      <h2>Scores</h2>
     </v-card-title>
     <v-card-text> {{ scores }} </v-card-text>
   </v-card>
