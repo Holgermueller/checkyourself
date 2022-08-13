@@ -10,6 +10,8 @@
           rows="5"
           v-model="message"
         ></v-textarea>
+
+        <v-select label="Select a language"></v-select>
       </v-form>
     </v-card-text>
     <v-card-actions>
