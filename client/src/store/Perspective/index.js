@@ -49,13 +49,13 @@ export default {
   },
 
   actions: {
-    getScores({ commit }, payload) {
-      const API_URL = "/api/perspective";
+    async getScores({ commit }, payload) {
+      const API_URL = "/api/perspective/";
       let messageToCheck = payload.message;
 
-      const response = axios.get(API_URL, messageToCheck);
+      const response = await axios.get(API_URL, messageToCheck);
 
-      console.log("The response: " + response);
+      console.log("The response: " + response.data);
 
       const scores = response;
 
