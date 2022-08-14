@@ -50,18 +50,28 @@ export default {
 
   actions: {
     getScores({ commit }, payload) {
+      const API_URL = "/api/perspective";
       let messageToCheck = payload.message;
 
-      axios
-        .post("/", {
-          messageToCheck: messageToCheck,
-        })
-        .then((res) => {
-          console.log("the res: " + res);
-          const scores = res;
+      const response = axios.get(API_URL, messageToCheck);
 
-          commit("SET_SCORES", scores);
-        });
+      console.log("The response: " + response);
+
+      const scores = response;
+
+      commit("SET_SCORES", scores);
+
+      // axios
+      //   .get("/api/perspective", {
+      //     messageToCheck: messageToCheck,
+      //   })
+      //   .then((res) => {
+      //     console.log(messageToCheck);
+      //     console.log("the res: " + res.data);
+      //     const scores = res;
+
+      //     commit("SET_SCORES", scores);
+      //   });
     },
   },
 

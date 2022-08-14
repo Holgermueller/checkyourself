@@ -8,7 +8,9 @@
         <div v-for="(score, index) in scores" :key="index" class="score">
           <div
             class="single-score"
-            :style="`width: ${score.Score}%; background: ${score.color}; border-left: 4px solid ${score.borderColor}`"
+            :style="`width: ${score.Score || 0}%; background: ${
+              score.color
+            }; border-left: 4px solid ${score.borderColor}`"
           ></div>
           <span>
             <h4>{{ score.ScoreName }}: {{ score.Score }}</h4>
