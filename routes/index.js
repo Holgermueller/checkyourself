@@ -8,10 +8,10 @@ const DISCOVERY_URL = process.env.DISCOVERY_URL;
 router.get("/", async (req, res) => {
   let messageToCheck = req.body.messageToCheck;
 
-  // if (!req.body.messageToCheck) {
-  //   res.status(400);
-  //   throw new Error("Please add something.");
-  // }
+  if (!req.body.messageToCheck) {
+    res.status(400);
+    throw new Error("Please add something.");
+  }
 
   console.log(messageToCheck);
 

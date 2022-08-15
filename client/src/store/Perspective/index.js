@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 export default {
   state: {
@@ -50,16 +50,25 @@ export default {
 
   actions: {
     async getScores({ commit }, payload) {
-      const API_URL = "/api/perspective";
-      let messageToCheck = payload.message;
+      const API_URL = "/api/perspective/";
+      const messageToCheck = payload.message;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
 
-      const response = await axios.get(API_URL, messageToCheck);
+      console.log(API_URL, messageToCheck, config);
 
-      console.log("The response: " + response.data);
+      try {
+        let res = await axios.get(API_URL, messageToCheck);
 
-      const scores = response;
+        const scores = res.data;
 
-      commit("SET_SCORES", scores);
+        commit("SET_SCORES", scores);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 
