@@ -5,15 +5,15 @@ const { google } = require("googleapis");
 const API_KEY = process.env.API_KEY;
 const DISCOVERY_URL = process.env.DISCOVERY_URL;
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   let messageToCheck = req.body.messageToCheck;
+
+  console.log(messageToCheck);
 
   if (!req.body.messageToCheck) {
     res.status(400);
     throw new Error("Please add something.");
   }
-
-  console.log(messageToCheck);
 
   google
     .discoverAPI(DISCOVERY_URL)
@@ -24,6 +24,11 @@ router.get("/", async (req, res) => {
         },
         requestedAttributes: {
           TOXICITY: {},
+          SEVERE_TOXICITY: {},
+          IDENTITY_ATTACK: {},
+          INSULT: {},
+          PROFANITY: {},
+          THREAT: {},
         },
       };
 
@@ -34,7 +39,6 @@ router.get("/", async (req, res) => {
         },
         (err, response) => {
           if (err) throw err;
-          console.log(JSON.stringify(response.data, null, 2));
           let data = JSON.stringify(response.data, null, 2);
           res.status(200).json(data);
         }

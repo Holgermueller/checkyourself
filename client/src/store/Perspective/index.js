@@ -53,7 +53,11 @@ export default {
       const API_URL = "/api/perspective/";
       const messageToCheck = payload.message;
 
-      let response = await axios.post(API_URL, messageToCheck);
+      console.log(messageToCheck);
+
+      let response = await axios.post(API_URL, {
+        messageToCheck: messageToCheck,
+      });
 
       console.log(response);
 
