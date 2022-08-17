@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
       );
     })
     .catch((err) => {
-      res.status(500).json(err.data.status);
+      res.status(500).json({ err });
       throw err;
     });
 });
