@@ -50,6 +50,21 @@ export default {
 
   actions: {
     async getScores({ commit }, payload) {
+      // let messageToCheck = payload.message;
+      // let scores;
+      // await axios
+      //   .post("/api/perspective", messageToCheck)
+      //   .then(({ data }) => {
+      //     console.let({ data });
+      //   })
+      //   .catch((err) => {
+      //     if (err.response) {
+      //       console.log(err.response.data);
+      //       console.log(err.response.status);
+      //       console.log(err.response.headers);
+      //     }
+      //   });
+
       const API_URL = "/api/perspective/";
       const messageToCheck = payload.message;
       const config = {
@@ -60,15 +75,15 @@ export default {
 
       console.log(API_URL, messageToCheck, config);
 
-      try {
-        let res = await axios.get(API_URL, messageToCheck);
+      let response = await axios.post(API_URL, messageToCheck);
 
-        const scores = res.data;
+      console.log(response);
 
-        commit("SET_SCORES", scores);
-      } catch (error) {
-        console.log(error);
-      }
+      const scores = response.data;
+
+      console.log(response);
+
+      commit("SET_SCORES", scores);
     },
   },
 

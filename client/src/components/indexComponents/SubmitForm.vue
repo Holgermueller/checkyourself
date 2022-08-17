@@ -1,13 +1,14 @@
 <template>
   <v-card class="submit-form-card" elevation="0">
-    <v-card-title> </v-card-title>
+    <v-card-title>
+      <h2>Check your message here:</h2>
+    </v-card-title>
 
     <v-card-text>
       <v-form ref="form" class="form">
         <v-textarea
           aria-placeholder="Type text to check here..."
           placeholder="Type text to check here..."
-          rows="5"
           v-model="message"
         ></v-textarea>
 
@@ -46,6 +47,7 @@ export default {
       this.$store.dispatch("getScores", {
         message: this.message,
       });
+      this.clearForm();
     },
   },
 };

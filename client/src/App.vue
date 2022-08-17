@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark elevation="0">
-      <v-btn to="/">Check Yourself</v-btn>
+    <v-app-bar app color="#fafafa" elevation="0">
+      <v-btn elevation="0" to="/">Check Yourself</v-btn>
 
       <v-spacer></v-spacer>
       <v-btn to="about" elevation="0"> About </v-btn>
@@ -28,3 +28,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.v-btn {
+  background-color: #fafafa;
+}
+</style>
