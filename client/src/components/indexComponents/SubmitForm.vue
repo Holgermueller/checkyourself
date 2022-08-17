@@ -16,7 +16,7 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <v-btn elevation="0" @click.prevent="clearForm">Clear</v-btn>
+      <v-btn elevation="0" @click="clearForm">Clear</v-btn>
       <v-spacer></v-spacer>
       <v-btn
         elevation="0"

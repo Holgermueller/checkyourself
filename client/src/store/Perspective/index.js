@@ -5,13 +5,13 @@ export default {
     scores: [
       {
         ScoreName: "Toxicity",
-        Score: 25,
+        Score: 0,
         borderColor: "green",
         color: "rgba(69, 196, 150, 0.2)",
       },
       {
         ScoreName: "Severe Toxicity",
-        Score: 35,
+        Score: 0,
         borderColor: "#ffd700",
         color: "rgba(255, 215, 0, 0.2)",
       },
@@ -23,19 +23,19 @@ export default {
       },
       {
         ScoreName: "Insult",
-        Score: 55,
+        Score: 0,
         borderColor: "#9932cc",
         color: "rgba(153, 50, 204, 0.2)",
       },
       {
         ScoreName: "Profanity",
-        Score: 65,
+        Score: 0,
         borderColor: "#ffa500",
         color: "rgba(255, 165, 0, 0.2)",
       },
       {
         ScoreName: "Threat",
-        Score: 95,
+        Score: 0,
         borderColor: "red",
         color: "rgba(217, 27, 66, 0.2)",
       },
@@ -50,38 +50,14 @@ export default {
 
   actions: {
     async getScores({ commit }, payload) {
-      // let messageToCheck = payload.message;
-      // let scores;
-      // await axios
-      //   .post("/api/perspective", messageToCheck)
-      //   .then(({ data }) => {
-      //     console.let({ data });
-      //   })
-      //   .catch((err) => {
-      //     if (err.response) {
-      //       console.log(err.response.data);
-      //       console.log(err.response.status);
-      //       console.log(err.response.headers);
-      //     }
-      //   });
-
       const API_URL = "/api/perspective/";
       const messageToCheck = payload.message;
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      console.log(API_URL, messageToCheck, config);
 
       let response = await axios.post(API_URL, messageToCheck);
 
       console.log(response);
 
       const scores = response.data;
-
-      console.log(response);
 
       commit("SET_SCORES", scores);
     },
