@@ -14,13 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/perspective", require("./routes"));
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(static(path.join(__dirname, "client/dist")));
-// }
+app.use(static(path.join(__dirname, "client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
+// });
 
 app.listen(PORT, (_) => {
   console.log(`Api server listening on PORT: ${PORT}`.green.underline);
