@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0">
     <v-card-title>
-      <h2>Scores</h2>
+      <h2>Yourself Checked:</h2>
     </v-card-title>
     <v-card-text>
       <div class="scores">
@@ -13,7 +13,7 @@
             }; border-left: 4px solid ${score.borderColor}`"
           ></div>
           <span>
-            <h4>{{ score.ScoreName }}: {{ score.Score }}</h4>
+            <h4>{{ score.ScoreName }}: {{ score.Score }}%</h4>
           </span>
         </div>
       </div>

@@ -8,8 +8,6 @@ const DISCOVERY_URL = process.env.DISCOVERY_URL;
 router.post("/", async (req, res) => {
   let messageToCheck = req.body.messageToCheck;
 
-  console.log(messageToCheck);
-
   if (!req.body.messageToCheck) {
     res.status(400);
     throw new Error("Please add something.");
@@ -29,6 +27,7 @@ router.post("/", async (req, res) => {
           INSULT: {},
           PROFANITY: {},
           THREAT: {},
+          SEXUALLY_EXPLICIT: {},
         },
       };
 
@@ -39,13 +38,13 @@ router.post("/", async (req, res) => {
         },
         (err, response) => {
           if (err) throw err;
-          let data = JSON.stringify(response.data, null, 2);
-          res.status(200).json(data);
+          // let data = JSON.stringify(response.data, null, 2);
+          res.status(200).json(response.data);
         }
       );
     })
     .catch((err) => {
-      res.status(500).json({ err });
+      res.status(500).json(err.data.status);
       throw err;
     });
 });

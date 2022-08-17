@@ -1,7 +1,7 @@
 <template>
   <v-card class="submit-form-card" elevation="0">
     <v-card-title>
-      <h2>Check your message here:</h2>
+      <h2>Check yourself:</h2>
     </v-card-title>
 
     <v-card-text>
@@ -12,7 +12,7 @@
           v-model="message"
         ></v-textarea>
 
-        <v-select label="Select a language"></v-select>
+        <!-- <v-select label="Select a language"></v-select> -->
       </v-form>
     </v-card-text>
     <v-card-actions>
@@ -34,7 +34,7 @@ export default {
 
   data: () => ({
     message: "",
-    language: "",
+    // language: "",
   }),
 
   methods: {
