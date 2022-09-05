@@ -1,7 +1,7 @@
 <template>
   <v-card class="submit-form-card" elevation="0">
     <v-card-title>
-      <h2>Check yourself:</h2>
+      <div class="headline">Check yourself:</div>
     </v-card-title>
 
     <v-card-text>

@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0">
     <v-card-title>
-      <h2>Yourself Checked:</h2>
+      <div class="headline">Yourself Checked:</div>
     </v-card-title>
     <v-card-text>
       <div class="scores">

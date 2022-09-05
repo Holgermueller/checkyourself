@@ -1,14 +1,14 @@
 <template>
-  <v-container class="main-container">
-    <v-row class="text-center">
-      <v-col>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
         <SubmitForm />
-      </v-col>
-      <v-col>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
         <ScoresDisplay />
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-.main-container {
+/* .main-container {
   margin-top: 5%;
-}
+} */
 </style>
