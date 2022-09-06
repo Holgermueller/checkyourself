@@ -4,7 +4,7 @@
       <v-btn elevation="0" to="/">Check Yourself</v-btn>
 
       <v-spacer></v-spacer>
-      <v-btn to="about" elevation="0"> About </v-btn>
+      <v-btn to="about" elevation="0">About</v-btn>
     </v-app-bar>
 
     <v-main>

@@ -147,6 +147,8 @@ export default {
 
         commit("SET_SCORES", scores);
       } catch (error) {
+        commit("SET_ERROR", error);
+        console.log(error);
         console.error(error.name);
         console.error(error.code);
         console.error(error.message);

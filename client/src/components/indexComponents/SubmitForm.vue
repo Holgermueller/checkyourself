@@ -23,7 +23,7 @@
         @click.prevent="submitForm"
         :disabled="this.message === ''"
         rounded
-        ><v-icon>mdi-check</v-icon> Submit</v-btn
+        ><v-icon>mdi-account</v-icon>Submit</v-btn
       >
       <v-btn elevation="0" rounded>
         <v-icon>mdi-twitter</v-icon> Tweet it</v-btn

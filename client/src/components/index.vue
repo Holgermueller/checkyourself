@@ -1,6 +1,7 @@
 <template>
   <div class="container text-center">
-    <div class="row">
+    <ErrorCard v-if="error" />
+    <div v-else class="row">
       <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
         <SubmitForm />
       </div>
@@ -12,20 +13,22 @@
 </template>
 
 <script>
+import ErrorCard from "./indexComponents/Errors.vue";
 import SubmitForm from "./indexComponents/SubmitForm.vue";
 import ScoresDisplay from "./indexComponents/ScoresDisplay.vue";
 
 export default {
   name: "HomePage",
   components: {
+    ErrorCard,
     SubmitForm,
     ScoresDisplay,
   },
+
+  computed: {
+    error() {
+      return this.$store.getters.error;
+    },
+  },
 };
 </script>
-
-<style scoped>
-/* .main-container {
-  margin-top: 5%;
-} */
-</style>
