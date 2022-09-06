@@ -16,17 +16,18 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <v-btn elevation="0" @click="clearForm" rounded>Clear</v-btn>
-
+      <v-btn elevation="0" @click="clearForm" color="indigo" dark rounded
+        >Clear</v-btn
+      >
+      <v-spacer></v-spacer>
       <v-btn
         elevation="0"
         @click.prevent="submitForm"
         :disabled="this.message === ''"
         rounded
-        ><v-icon>mdi-account</v-icon>Submit</v-btn
-      >
-      <v-btn elevation="0" rounded>
-        <v-icon>mdi-twitter</v-icon> Tweet it</v-btn
+        color="green"
+        dark
+        >Submit</v-btn
       >
     </v-card-actions>
   </v-card>

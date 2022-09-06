@@ -2,6 +2,8 @@ import axios from "axios";
 
 export default {
   state: {
+    messageToCheck: "",
+
     scores: [
       {
         id: "TOXICITY",
@@ -58,6 +60,10 @@ export default {
   mutations: {
     SET_SCORES(state, payload) {
       state.scores = payload;
+    },
+
+    SET_MESSAGE(state, payload) {
+      state.messageToCheck = payload;
     },
   },
 
@@ -146,6 +152,7 @@ export default {
         ];
 
         commit("SET_SCORES", scores);
+        commit("SET_MESSAGE", messageToCheck);
       } catch (error) {
         commit("SET_ERROR", error);
         console.log(error);
@@ -158,6 +165,10 @@ export default {
   },
 
   getters: {
+    messageToCheck(state) {
+      return state.messageToCheck;
+    },
+
     scores(state) {
       return state.scores;
     },

@@ -9,6 +9,9 @@
         <ScoresDisplay />
       </div>
     </div>
+    <div>
+      <TweetMessageComponent />
+    </div>
   </div>
 </template>
 
@@ -16,6 +19,7 @@
 import ErrorCard from "./indexComponents/Errors.vue";
 import SubmitForm from "./indexComponents/SubmitForm.vue";
 import ScoresDisplay from "./indexComponents/ScoresDisplay.vue";
+import TweetMessageComponent from "./indexComponents/Tweet.vue";
 
 export default {
   name: "HomePage",
@@ -23,6 +27,7 @@ export default {
     ErrorCard,
     SubmitForm,
     ScoresDisplay,
+    TweetMessageComponent,
   },
 
   computed: {
