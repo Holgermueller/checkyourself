@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style scoped>
+body,
+html {
+  font-family: roboto, sans-serif;
+}
 .v-btn {
   background-color: #fafafa;
 }

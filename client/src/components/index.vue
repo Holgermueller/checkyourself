@@ -1,10 +1,10 @@
 <template>
   <div class="container text-center">
     <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+      <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
         <SubmitForm />
       </div>
-      <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+      <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
         <ScoresDisplay />
       </div>
     </div>

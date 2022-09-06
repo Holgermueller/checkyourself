@@ -16,13 +16,17 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <v-btn elevation="0" @click="clearForm">Clear</v-btn>
-      <v-spacer></v-spacer>
+      <v-btn elevation="0" @click="clearForm" rounded>Clear</v-btn>
+
       <v-btn
         elevation="0"
         @click.prevent="submitForm"
         :disabled="this.message === ''"
-        >Submit</v-btn
+        rounded
+        ><v-icon>mdi-check</v-icon> Submit</v-btn
+      >
+      <v-btn elevation="0" rounded>
+        <v-icon>mdi-twitter</v-icon> Tweet it</v-btn
       >
     </v-card-actions>
   </v-card>
@@ -57,5 +61,8 @@ export default {
 .form {
   width: 95%;
   margin: auto;
+}
+v-btn {
+  width: 100%;
 }
 </style>
