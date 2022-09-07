@@ -11,13 +11,11 @@
           placeholder="Type text to check here..."
           v-model="message"
         ></v-textarea>
-
-        <!-- <v-select label="Select a language"></v-select> -->
       </v-form>
     </v-card-text>
     <v-card-actions>
       <v-btn elevation="0" @click="clearForm" color="indigo" dark rounded>
-        <i class="fa-solid fa-ban"></i> Clear</v-btn
+        <v-icon left>fa-solid fa-ban</v-icon> Clear</v-btn
       >
       <v-spacer></v-spacer>
       <v-btn
@@ -28,7 +26,8 @@
         color="green"
         dark
       >
-        <i class="fa-solid fa-check"></i> Submit</v-btn
+        <v-icon left>fa-solid fa-check</v-icon>
+        Submit</v-btn
       >
     </v-card-actions>
   </v-card>

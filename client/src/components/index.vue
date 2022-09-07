@@ -9,6 +9,7 @@
         <ScoresDisplay />
       </div>
     </div>
+
     <div v-if="messageToCheck">
       <TweetMessageComponent />
     </div>

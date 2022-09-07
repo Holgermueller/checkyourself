@@ -3,12 +3,13 @@
     <v-app-bar app color="#fafafa" elevation="0">
       <a href="/">
         <h1 class="title">
-          <i class="fa-solid fa-check"></i>Check Yourself
+          <v-icon left>fa-solid fa-check</v-icon>
+          Check Yourself
         </h1></a
       >
 
       <v-spacer></v-spacer>
-      <a href="/about"> About</a>
+      <a href="/about">About</a>
     </v-app-bar>
 
     <v-main>
@@ -35,8 +36,6 @@
 export default {
   name: "App",
 
-  components: {},
-
   data: () => ({
     //
   }),
@@ -48,8 +47,9 @@ body,
 html {
   font-family: roboto, sans-serif;
 }
-.v-btn {
-  background-color: #fafafa;
+h1,
+.v-icon {
+  color: #006600;
 }
 a {
   text-decoration: none;
