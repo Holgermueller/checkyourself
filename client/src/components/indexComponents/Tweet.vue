@@ -2,7 +2,7 @@
   <div id="TweetMessage">
     <v-card>
       <v-card-title>
-        <h1>Tweet it?</h1>
+        <h1><i class="fab fa-twitter"></i> Tweet it?</h1>
       </v-card-title>
       <v-card-text>
         <v-textarea
@@ -12,7 +12,16 @@
         ></v-textarea>
       </v-card-text>
       <v-card-actions>
-        <v-btn @click="tweetIt" block>Tweet It?</v-btn>
+        <v-btn @click="tweetIt" block>
+          <i class="fab fa-twitter"></i>
+          <a
+            id="shareTweet"
+            href="https://twitter.com/intent/tweet"
+            data-size="large"
+          >
+            Tweet It?</a
+          >
+        </v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -34,7 +43,10 @@ export default {
 
   methods: {
     tweetIt() {
-      console.log(this.messageToCheck);
+      let messageToShare = this.messageToCheck;
+      let tweetURL = "https://twitter.com/intent/tweet?text=" + messageToShare;
+
+      document.getElementById("shareTweet").attr("href", tweetURL);
     },
   },
 };

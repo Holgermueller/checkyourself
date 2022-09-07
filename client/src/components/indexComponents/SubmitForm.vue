@@ -16,8 +16,8 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <v-btn elevation="0" @click="clearForm" color="indigo" dark rounded
-        >Clear</v-btn
+      <v-btn elevation="0" @click="clearForm" color="indigo" dark rounded>
+        <i class="fa-solid fa-ban"></i> Clear</v-btn
       >
       <v-spacer></v-spacer>
       <v-btn
@@ -27,7 +27,8 @@
         rounded
         color="green"
         dark
-        >Submit</v-btn
+      >
+        <i class="fa-solid fa-check"></i> Submit</v-btn
       >
     </v-card-actions>
   </v-card>

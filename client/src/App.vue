@@ -1,10 +1,14 @@
 <template>
   <v-app>
     <v-app-bar app color="#fafafa" elevation="0">
-      <v-btn elevation="0" to="/">Check Yourself</v-btn>
+      <a href="/">
+        <h1 class="title">
+          <i class="fa-solid fa-check"></i>Check Yourself
+        </h1></a
+      >
 
       <v-spacer></v-spacer>
-      <v-btn to="about" elevation="0">About</v-btn>
+      <a href="/about"> About</a>
     </v-app-bar>
 
     <v-main>

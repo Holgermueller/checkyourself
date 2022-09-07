@@ -9,7 +9,7 @@
         <ScoresDisplay />
       </div>
     </div>
-    <div>
+    <div v-if="messageToCheck">
       <TweetMessageComponent />
     </div>
   </div>
@@ -33,6 +33,9 @@ export default {
   computed: {
     error() {
       return this.$store.getters.error;
+    },
+    messageToCheck() {
+      return this.$store.getters.messageToCheck;
     },
   },
 };
