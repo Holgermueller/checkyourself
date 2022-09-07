@@ -6,7 +6,8 @@
       </v-card-title>
       <v-card-text>
         <v-textarea
-          v-model="messageToTweet"
+          id="tweetContainer"
+          class="tweet-container"
           :value="messageToCheck"
         ></v-textarea>
       </v-card-text>
@@ -22,9 +23,7 @@ export default {
   name: "TweetMessageComponent",
 
   data() {
-    return {
-      messageToTweet: "",
-    };
+    return {};
   },
 
   computed: {
@@ -35,7 +34,7 @@ export default {
 
   methods: {
     tweetIt() {
-      console.log("tweet");
+      console.log(this.messageToCheck);
     },
   },
 };
@@ -48,6 +47,7 @@ export default {
 }
 .v-textarea {
   background-color: #f5f8fa;
+  padding: 8px;
 }
 .v-btn {
   background-color: #f5f8fa;
