@@ -10,13 +10,21 @@
           class="tweet-container"
           :value="messageToCheck"
           rounded
+          clearable
+          counter
+          clear-icon
         ></v-textarea>
       </v-card-text>
       <v-card-actions>
-        <v-btn id="shareTweet" @click="tweetIt" data-size="large" block>
-          <v-icon left>fab fa-twitter</v-icon>
-          Tweet It?
-        </v-btn>
+        <a
+          id="shareTweet"
+          ref="shareTweet"
+          href="https://twitter.com/intent/tweet"
+          data-size="large"
+          ><v-btn @click="tweetIt" block
+            ><v-icon left>fab fa-twitter</v-icon> Tweet It?
+          </v-btn></a
+        >
       </v-card-actions>
     </v-card>
   </div>
@@ -37,7 +45,9 @@ export default {
       let messageToShare = this.messageToCheck;
       let tweetURL = "https://twitter.com/intent/tweet?text=" + messageToShare;
 
-      document.getElementById("shareTweet").attr("href", tweetURL);
+      this.$refs.shareTweet.href = tweetURL;
+
+      // document.getElementById("shareTweet").href = tweetURL;
     },
   },
 };
@@ -57,5 +67,9 @@ export default {
   background-color: #f5f8fa;
   color: #1da1f2;
   font-weight: bolder;
+}
+a {
+  width: 100%;
+  text-decoration: none;
 }
 </style>
